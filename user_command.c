@@ -8,24 +8,24 @@
  */
 int main(void)
 {
-  char *buffer = malloc(1024);
-  size_t len = 1024;
-  char *token;
+	char *buffer = malloc(1024);
+	size_t len = 1024;
+	char *token;
 
-  while (1)
-  {
-    puts("$ ");
-    getline(&buffer, &len, stdin);
-    puts("buffer getline: ");
-    puts(buffer);
-  
-    token = strtok(buffer, " ");
-    while (token)
-    {
-      puts("buffer strtok: ");
-      puts(token);
-      token = strtok(NULL, " ");
-    }
-  }
-  return (0);
+	while (1)
+	{
+	puts("$ ");
+	getline(&buffer, &len, stdin);
+	puts("buffer getline: ");
+	puts(buffer);
+
+	token = strtok(buffer, " ");
+	while (token)
+	{
+	puts("buffer strtok: ");
+	puts(token);
+	token = strtok(NULL, " ");
+	}
+	}
+	return (0);
 }

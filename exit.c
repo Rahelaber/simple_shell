@@ -12,29 +12,29 @@ void exit_shell(void);
 
 int main(void)
 {
-    char *input = NULL;
-    size_t len = 0;
-    ssize_t read;
+	char *input = NULL;
+	size_t len = 0;
+	ssize_t read;
 
-    while (1)
-    {
-        puts("$ ");
-        read = getline(&input, &len, stdin);
+	while (1)
+	{
+	puts("$ ");
+	read = getline(&input, &len, stdin);
 
-        if (read == -1)
-        {
-            perror("getline");
-            exit(EXIT_FAILURE);
-        }
-        /*Handle 'exit' command here*/
-        if (strcmp(input, "exit\n") == 0)
-        {
-            free(input);
-            exit(EXIT_SUCCESS);
-        }
-    }
+	if (read == -1)
+	{
+	perror("getline");
+	exit(EXIT_FAILURE);
+	}
+	/*Handle 'exit' command here*/
+	if (strcmp(input, "exit\n") == 0)
+	{
+	free(input);
+	exit(EXIT_SUCCESS);
+	}
+	}
 
-    exit_shell();
+	exit_shell();
 
-    return 0;
+	return 0;
 }

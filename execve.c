@@ -8,13 +8,14 @@
  */
 int main(void)
 {
-  char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
 
-  puts("Before execve");
-  if (execve(argv[0], argv, NULL) == -1)
-  {
-    perror("Error:");
-  }
-  puts("After execve");
-  return (0);
+	char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+
+	puts("Before execve");
+	if (execve(argv[0], argv, NULL) == -1)
+	{
+	perror("Error:");
+	}
+	puts("After execve");
+	return (0);
 }
