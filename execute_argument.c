@@ -37,7 +37,7 @@ int execute_args(char **args)
 	{
 	if (strcmp(args[0], builtin_str[i]) == 0)
 	{
-	return ((*builtin_func[i])
+	return ((*builtin_func[i]));
 	}
 	}
 

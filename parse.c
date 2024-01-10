@@ -40,7 +40,7 @@ int main(void)
 	}
 
 	free(input);
-	return 0;
+	return (0);
 }
 
 void prompt_$(void)
@@ -95,7 +95,7 @@ char **parse_input(char *input)
 	}
 	args[i] = NULL; /* Set the last argument to NULL*/
 	{
-	return args;
+	return (args);
 	}
 }
 

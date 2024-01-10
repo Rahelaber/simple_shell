@@ -36,5 +36,5 @@ int main(void)
 
 	exit_shell();
 
-	return 0;
+	return (0);
 }
