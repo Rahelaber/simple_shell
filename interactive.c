@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <stdio.h>
 #include "shell.h"
 
 /**
@@ -12,7 +14,7 @@ char **args;
 int status = -1;
 
 do {
-        printf("rd$ "); /* print prompt symbol */
+        write(STDOUT_FILENO, "rd$ ", 4);/* print prompt symbol */
         line = read_line(); /* read line from stdin */
         args = split_line(line); /* tokenize line */
         status = execute_args(args);

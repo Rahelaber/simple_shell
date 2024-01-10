@@ -1,22 +1,36 @@
-int error_check(void) 
-{ 
-    char *input = NULL; 
-    size_t len = 0; 
-    ssize_t read; 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-    while (1) { 
-        puts("$ "); 
-        read = getline(&input, &len, stdin); 
+int error_check(void) {
+    char *input = NULL;
+    size_t len = 0;
+    ssize_t read;
 
-        if (read == -1) { 
-           perror("getline"); 
-           exit(EXIT_FAILURE); } 
+    while (1) {
+        write(STDOUT_FILENO, "$ ", 2);
+        read = getline(&input, &len, stdin);
 
-// Execute commands based on 'input' here 
-// Handle command not found error 
+        if (read == -1) {
+            perror("getline");
+            exit(EXIT_FAILURE);
+        }
 
-    } 
+        // Execute commands based on 'input' here
+        // Handle command not found error
 
-    free(input); 
+        // Example command execution
+        int ret = system(input);
+        if (ret == -1) {
+            fprintf(stderr, "Command not found: %s\n", input);
+        }
+    }
+
+    free(input);
     return 0;
+}
 
+int main() {
+    error_check();
+    return 0;
+}

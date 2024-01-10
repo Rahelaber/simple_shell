@@ -1,14 +1,9 @@
 #ifndef SHELL_H
 #define SHELL_H
 
-
-/*---LIBRARIES---*/
-#include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
-
 
 /*---Macros---*/
 #define TOK_DELIM " \t\r\n\a\""
@@ -20,16 +15,15 @@ extern char **environ;
 void shell_interactive(void);
 void shell_no_interactive(void);
 
-
 /* shell_interactive.c */
-prompt_$(void)
+void prompt_$(void);
 char *read_line(void);
 char **split_line(char *line);
 int execute_args(char **args);
-error_check(void)
-execute_command(command);
-exit_shell(void)
-user_input(char *command, size_t size)
+void error_check(void);
+void execute_command(char *command);
+void exit_shell(void);
+void user_input(char *command, size_t size);
 
 /* execute_args */
 int new_process(char **args);
@@ -44,4 +38,3 @@ int own_env(char **args);
 int own_help(char **args);
 
 #endif
-
