@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * error_check - function that checks if there i s an error
+ *
+ * Return: 0 on success
+ */
+
 int error_check(void)
 {
 	char *input = NULL;
@@ -35,6 +41,12 @@ int error_check(void)
 
 		return (0);
 }
+
+/**
+ * main - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
 
 int main(void)
 {

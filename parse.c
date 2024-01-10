@@ -4,8 +4,14 @@
 #include <string.h>
 #include <sys/wait.h>
 
+/**
+ * main - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
+
 /* Function declarations */
-void prompt_$(void);
+
 void error_check(void);
 void exit_shell(void);
 char **parse_input(char *input);
@@ -43,22 +49,42 @@ int main(void)
 	return (0);
 }
 
-void prompt_$(void)
-{
-	printf("$ ");
-}
 
-void error_check(void)
+
+/**
+ * error_check - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
+
+uvoid error_check(void)
 {
 	/* Implement error checking logic here */
 }
+
+
+/**
+ * exit_shell - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
 
 void exit_shell(void)
 {
 	/* Implement shell exit logic here */
 }
+/**
+ * parse_input - Tokenizes a string into an array of arguments
+ *
+ * @input: The input string to be parsed
+ *
+ * @args: The array to store the parsed arguments
+ *
+ * Return: An array of arguments
+ */
 
 char **parse_input(char *input)
+
 {
 	/* Allocate memory for an initial array of arguments*/
 	char **args = malloc(64 * sizeof(char *));
@@ -98,6 +124,12 @@ char **parse_input(char *input)
 	return (args);
 	}
 }
+
+/**
+ * execute_command - function that checks if our shell is called
+ * @args: The array to store the parsed arguments
+ * Return: char **args on success
+ */
 
 void execute_command(char **args)
 {

@@ -3,14 +3,13 @@
 #include <string.h>
 
 /**
- * exit_shell - Exit the shell
+ * exit_shell - function that checks if our shell should exit
  *
- *
- * Return: 1 if success, 0 otherwise.
+ * Return: 0 on success
  */
+
 void exit_shell(void);
 
-int main(void)
 {
 	char *input = NULL;
 	size_t len = 0;

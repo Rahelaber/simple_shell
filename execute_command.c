@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+/**
+ * main - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
+
 
 /* Function declarations */
-void prompt_$(void);
 void error_check(void);
 void exit_shell(void);
 
@@ -38,10 +43,23 @@ void prompt_$(void)
 	printf("$ ");
 }
 
+/**
+ * error_check - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
+
 void error_check(void)
+
 {
 	/* Implement error checking logic here */
 }
+
+/**
+ * exit_shell - function that checks if our shell is called
+ *
+ * Return: 0 on success
+ */
 
 void exit_shell(void)
 {
