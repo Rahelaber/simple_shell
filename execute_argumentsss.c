@@ -2,15 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
 
-int own_cd(char **args);
-int own_env(char **args);
-int own_help(char **args);
-int own_exit(char **args);
+#define MAX_COMMAND_LENGTH 1024
+#define MAX_NUM_ARGS 64
 
-int execute_args(char **args);
 
-int new_process(char **args);
+int own_cd(char **args) __attribute__((unused));
+int own_env(char **args) __attribute__((unused));
+int own_help(char **args) __attribute__((unused));
+int own_exit(char **args) __attribute__((unused));
+
+int execute_args(char **args) __attribute__((unused));
+
+int new_process(char **args) __attribute__((unused));
 
 int (*builtin_func[])(char **) = {
 	&own_cd,
@@ -24,8 +29,7 @@ int (*builtin_func[])(char **) = {
  *
  * Return: 1 if success, 0 otherwise.
  */
-int execute_args(char **args)
-{
+int execute_args(char **args __attribute__((unused))) {
 	int i;
 
 	for (i = 0; i < 4; i++)
@@ -45,8 +49,7 @@ int execute_args(char **args)
  *
  * Return: 1 if success, 0 otherwise.
  */
-int own_cd(char **args)
-{
+int own_cd(char **args __attribute__((unused))) {
 write(STDOUT_FILENO, "Executing own_cd function\n",
 		strlen("Executing own_cd function\n"));
 	return (1);
@@ -59,8 +62,7 @@ write(STDOUT_FILENO, "Executing own_cd function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_env(char **args)
-{
+int own_env(char **args __attribute__((unused))) {
 write(STDOUT_FILENO, "Executing own_env function\n",
 		strlen("Executing own_env function\n"));
 	return (1);
@@ -73,8 +75,7 @@ write(STDOUT_FILENO, "Executing own_env function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_help(char **args)
-{
+int own_help(char **args __attribute__((unused))) {
 write(STDOUT_FILENO, "Executing own_help function\n",
 		strlen("Executing own_help function\n"));
 	return (1);
@@ -87,9 +88,7 @@ write(STDOUT_FILENO, "Executing own_help function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_exit(char **args)
-
-{
+int own_exit(char **args __attribute__((unused))) {
 write(STDOUT_FILENO, "Executing own_exit function\n",
 		strlen("Executing own_exit function\n"));
 	return (0);
@@ -102,8 +101,7 @@ write(STDOUT_FILENO, "Executing own_exit function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int new_process(char **args)
-{
+int new_process(char **args __attribute__((unused))) {
 write(STDOUT_FILENO, "Executing new_process function\n",
 		strlen("Executing new_process function\n"));
 	return (1);
