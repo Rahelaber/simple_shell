@@ -29,7 +29,8 @@ int (*builtin_func[])(char **) = {
  *
  * Return: 1 if success, 0 otherwise.
  */
-int execute_args(char **args __attribute__((unused))) {
+int execute_args(char **args __attribute__((unused)))
+{
 	int i;
 
 	for (i = 0; i < 4; i++)
@@ -49,7 +50,8 @@ int execute_args(char **args __attribute__((unused))) {
  *
  * Return: 1 if success, 0 otherwise.
  */
-int own_cd(char **args __attribute__((unused))) {
+int own_cd(char **args __attribute__((unused)))
+{
 write(STDOUT_FILENO, "Executing own_cd function\n",
 		strlen("Executing own_cd function\n"));
 	return (1);
@@ -62,7 +64,8 @@ write(STDOUT_FILENO, "Executing own_cd function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_env(char **args __attribute__((unused))) {
+int own_env(char **args __attribute__((unused)))
+{
 write(STDOUT_FILENO, "Executing own_env function\n",
 		strlen("Executing own_env function\n"));
 	return (1);
@@ -75,7 +78,8 @@ write(STDOUT_FILENO, "Executing own_env function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_help(char **args __attribute__((unused))) {
+int own_help(char **args __attribute__((unused)))
+{
 write(STDOUT_FILENO, "Executing own_help function\n",
 		strlen("Executing own_help function\n"));
 	return (1);
@@ -88,7 +92,8 @@ write(STDOUT_FILENO, "Executing own_help function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int own_exit(char **args __attribute__((unused))) {
+int own_exit(char **args __attribute__((unused)))
+{
 write(STDOUT_FILENO, "Executing own_exit function\n",
 		strlen("Executing own_exit function\n"));
 	return (0);
@@ -101,7 +106,8 @@ write(STDOUT_FILENO, "Executing own_exit function\n",
  * Return: 1 if success, 0 otherwise.
  */
 
-int new_process(char **args __attribute__((unused))) {
+int new_process(char **args __attribute__((unused)))
+{
 write(STDOUT_FILENO, "Executing new_process function\n",
 		strlen("Executing new_process function\n"));
 	return (1);
