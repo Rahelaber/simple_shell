@@ -18,7 +18,12 @@ int (*builtin_func[])(char **) = {
 	&own_help,
 	&own_exit
 };
-
+/**
+ * execute_args - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
 int execute_args(char **args)
 {
 	int i;
@@ -34,40 +39,86 @@ int execute_args(char **args)
 	return (new_process(args));
 }
 
+/**
+ * own_cd - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
 int own_cd(char **args)
 {
-	write(STDOUT_FILENO, "Executing own_cd function\n", strlen("Executing own_cd function\n"));
+write(STDOUT_FILENO, "Executing own_cd function\n",
+		strlen("Executing own_cd function\n"));
 	return (1);
 }
+
+/**
+ * own_env - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
 
 int own_env(char **args)
 {
-	write(STDOUT_FILENO, "Executing own_env function\n", strlen("Executing own_env function\n"));
+write(STDOUT_FILENO, "Executing own_env function\n",
+		strlen("Executing own_env function\n"));
 	return (1);
 }
 
+/**
+ * own_help - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
+
 int own_help(char **args)
 {
-	write(STDOUT_FILENO, "Executing own_help function\n", strlen("Executing own_help function\n"));
+write(STDOUT_FILENO, "Executing own_help function\n",
+		strlen("Executing own_help function\n"));
 	return (1);
 }
+
+/**
+ * own_exit - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
 
 int own_exit(char **args)
 
 {
-	write(STDOUT_FILENO, "Executing own_exit function\n", strlen("Executing own_exit function\n"));
+write(STDOUT_FILENO, "Executing own_exit function\n",
+		strlen("Executing own_exit function\n"));
 	return (0);
 }
 
+/**
+ * new_process - execute arguments
+ * @args: array of strings that contains the command and its flags
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
+
 int new_process(char **args)
 {
-	write(STDOUT_FILENO, "Executing new_process function\n", strlen("Executing new_process function\n"));
+write(STDOUT_FILENO, "Executing new_process function\n",
+		strlen("Executing new_process function\n"));
 	return (1);
 }
+
+/**
+ * main - execute arguments
+ *
+ * Return: 1 if success, 0 otherwise.
+ */
 
 int main(void)
 {
 	char *command[] = {"cd", "env", "help", "exit"};
+
 	execute_args(command);
 	return (0);
 }
