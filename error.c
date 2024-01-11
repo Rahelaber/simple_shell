@@ -13,7 +13,8 @@ int error_check(void)
 	char *input = NULL;
 	size_t len = 0;
 	ssize_t read;
-
+	int ret; /* Declare ret variable*/
+	
 	while (1)
 	{
 	write(STDOUT_FILENO, "$ ", 2);
@@ -29,7 +30,7 @@ int error_check(void)
 	/* Handle command not found error */
 
 	/* Example command execution */
-	int ret = system(input);
+	ret = system(input);
 
 	if (ret == -1)
 		{

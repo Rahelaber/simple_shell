@@ -8,7 +8,7 @@
  * Return: 0 on success
  */
 
-void exit_shell(void);
+void exit_shell(void)
 
 {
 	char *input = NULL;
@@ -32,7 +32,10 @@ void exit_shell(void);
 	exit(EXIT_SUCCESS);
 	}
 	}
+}
 
+int main(void)
+{
 	exit_shell();
 
 	return (0);

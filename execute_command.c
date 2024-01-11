@@ -11,36 +11,19 @@
 /* Function declarations */
 void error_check(void);
 void exit_shell(void);
-
 int main(void)
 {
-	char *input = NULL;
-	size_t len = 0;
-	ssize_t read;
+        char *buffer = malloc(1024);
+        size_t len = 1024;
 
-	while (1)
-	{
-	prompt_$();
+        while (1)
+        {
+        puts("$ ");
+        getline(&buffer, &len, stdin);
+        puts(buffer);
+        }
 
-	read = getline(&input, &len, stdin);
-
-	if (read == -1)
-	{
-	perror("getline");
-	exit(EXIT_FAILURE);
-			}
-
-	/* Execute commands based on 'input' here */
-	/* Remember to fork a new process and use execve */
-	}
-
-	free(input);
-	return (0);
-}
-
-void prompt_$(void)
-{
-	printf("$ ");
+        return (0);
 }
 
 /**

@@ -5,6 +5,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define TOK_DELIM " "
+
 /**
  * split_line - split a string into multiple strings
  * @line: string to be splited
