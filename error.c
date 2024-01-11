@@ -14,7 +14,7 @@ int error_check(void)
 	size_t len = 0;
 	ssize_t read;
 	int ret; /* Declare ret variable*/
-	
+
 	while (1)
 	{
 	write(STDOUT_FILENO, "$ ", 2);

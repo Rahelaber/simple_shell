@@ -13,17 +13,17 @@ void error_check(void);
 void exit_shell(void);
 int main(void)
 {
-        char *buffer = malloc(1024);
-        size_t len = 1024;
+	char *buffer = malloc(1024);
+	size_t len = 1024;
 
-        while (1)
-        {
-        puts("$ ");
-        getline(&buffer, &len, stdin);
-        puts(buffer);
-        }
+	while (1)
+	{
+	puts("$ ");
+	getline(&buffer, &len, stdin);
+	puts(buffer);
+	}
 
-        return (0);
+	return (0);
 }
 
 /**

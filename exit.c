@@ -34,6 +34,12 @@ void exit_shell(void)
 	}
 }
 
+/**
+ * main - function that checks if our shell should exit
+ *
+ * Return: 0 on success
+ */
+
 int main(void)
 {
 	exit_shell();
